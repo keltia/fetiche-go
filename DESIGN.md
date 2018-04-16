@@ -68,3 +68,18 @@ fetiched is a web-scrapping/monitoring daemon for full/partial pages.
 - pg?
 
 
+## Architecture
+
+- fetiched starts, read the db for the sites, queues those due
+- main loop:
+  - fetch next one, scraps it, cache the result and compare
+    if difference found
+      store result into another queue
+    else
+      stop
+- upon submit through cli/web, add url to queue
+
+- report generation:
+  - inside fetiched?
+  - fetch result through cli & generate report there?
+
