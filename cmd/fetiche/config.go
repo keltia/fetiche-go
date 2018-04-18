@@ -10,7 +10,6 @@ import (
 	"encoding/base64"
 	"fmt"
 	"io/ioutil"
-	"log"
 	"os"
 	"strings"
 
@@ -59,24 +58,18 @@ func LoadConfig(file string) (c *Config, err error) {
 }
 
 func setupProxyAuth() (auth string, err error) {
-	if fDebug {
-		log.Printf("Looking for proxy credentials in %s:", dbrcFile)
-	}
+	debug("Looking for proxy credentials in %s:", dbrcFile)
 
 	user, password, err := loadDbrc(dbrcFile)
 	if err != nil {
-		if fVerbose {
-			log.Printf("No dbrc file: %v", err)
-		}
+		verbose("No dbrc file: %v", err)
 	} else {
 		// Do we have a proxy user/password?
 		if user != "" && password != "" {
 			auth = fmt.Sprintf("%s:%s", user, password)
 			auth = "Basic " + base64.StdEncoding.EncodeToString([]byte(auth))
 
-			if fVerbose {
-				log.Printf("Proxy user %s found.", user)
-			}
+			verbose("Proxy user %s found.", user)
 		} else {
 			auth = "nothing"
 			err = errors.New("invalid proxy creds")
