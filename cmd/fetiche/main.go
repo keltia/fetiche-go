@@ -8,6 +8,7 @@ import (
 	"github.com/urfave/cli"
 	"os"
 	"sort"
+	"path/filepath"
 )
 
 const (
@@ -16,7 +17,7 @@ const (
 
 var (
 	// MyName is both package & CLI command name
-	MyName = "fetiche"
+	MyName = filepath.Base(os.Args[0])
 
 	// All possible commands
 	cliCommands []cli.Command

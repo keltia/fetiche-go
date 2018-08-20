@@ -18,6 +18,11 @@ fetiched is a web-scrapping/monitoring daemon for full/partial pages.
 - CLI interface
 - Web interface?
 
+### API ?
+
+- gRPC ?
+- REST ?
+
 ### CLI
 
 - url   add/info/rm/list

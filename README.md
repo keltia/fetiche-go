@@ -9,7 +9,7 @@
 
   Like many Go-based tools, installation is very easy
 
-    go get github.com/keltia/fetiche
+    go get github.com/keltia/fetiche/cmd/...
 
   or
 
@@ -29,7 +29,7 @@ Please see CONTRIBUTING.md for some simple rules.
 
 I use Git Flow for this package so please use something similar or the usual github workflow.
 
-1. Fork it ( https://github.com/keltia/dmarc-cat/fork )
+1. Fork it ( https://github.com/keltia/fetiche/fork )
 2. Checkout the develop branch (`git checkout develop`)
 3. Create your feature branch (`git checkout -b my-new-feature`)
 4. Commit your changes (`git commit -am 'Add some feature'`)
